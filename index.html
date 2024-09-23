@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pokemon Shop</title>
+        <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+        <script  type="text/javascript" src="https://www3.gobiernodecanarias.org/educacion/cau_ce/cookies/cookieconsent.min.js"></script>
+        <script type="text/javascript" src="https://www3.gobiernodecanarias.org/educacion/cau_ce/cookies/cauce_cookie.js"></script>
+        <script type="text/javascript" src="https://www3.gobiernodecanarias.org/educacion/cau_ce/estadisticasweb/scripts/piwik-base.js"></script>
+        <script type="text/javascript" src="https://www3.gobiernodecanarias.org/educacion/cau_ce/estadisticasweb/scripts/piwik-eforma.js"></script>
+    </head>
+    <body>
+        <header id="main-header">
+            <div>
+                <h1 id="header-title">Pokemon Shop</h1>
+            </div>
+        </header>
+        <div class="body">
+            <button id="button" class="button">Let's go</button>
+        </div>
+        <div>
+            <input type="text" id="filtro" class="input"
+                placeholder="Buscar por tipo...">
+            <input type="text" id="filtro" class="input"
+                placeholder="Buscar por generación...">
+            <input type="text" id="filtro" class="input"
+                placeholder="Buscar por Poder Total...">
+        </div>
+        <div>
+            <input type="button" id="wish_list_btn" class="btMenu"
+                value="Añadir a lista de deseos" />
+            <input type="button" id="wish_list_btn" class="btMenu"
+                value="Ver lista de deseos" />
+            <input type="button" id="wish_list_btn" class="btMenu"
+                value="Comprar" />
+                <input type="button" id="wish_list_btn" class="btMenu"
+                value="Ver compra" />
+        </div>
+        <!-- La siguiente lista se puebla con los datos de la API Pokemon -->
+		<!-- Se puede sustituir la lista ul un div contenedor y dentro poner 
+		      div por cada tarjeta Pokemon y con CSS cuadrar la alineacion -->
+		<!-- Habrá que hacer paginación o simular Carrusel con CSS con dos flechas
+               a los lados del contanier y con Javascript recoger el evento click
+               y mostrar siguiente pafinción -->
+        <!-- ToDo: Eliminar el punto de lista con CSS -->
+		<div id="" class="pokemonList">
+            <h2 class="loadingData">Loading data...</h2>
+			<ul id="items">
+				<li class>
+					<input type="radio" value="Item 1">
+					<label for="html">Pokemon 1</label><br>
+				</input>
+			</li>
+			<li class>
+				<input type="radio" value="Item 1">
+				<label for="html">Pokemon 2</label><br>
+			</input>
+				</li>
+			</ul>
+		</div>
+    </body>
+    <script type="text/javascript" src="./js/script.js"></script>
+</html>
