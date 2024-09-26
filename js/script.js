@@ -1,3 +1,6 @@
+// array to save pokemons
+var pokemons = [];
+
 // selecciono boton del DOM
 const button = document.querySelector("button");
 
@@ -19,7 +22,7 @@ button.addEventListener("click", () => {
         // console.log(pokemonList);
     pokemonList.style.visibility = "visible";
 
-    showPokemons();
+    startPokemons();
 
 });
 
@@ -27,3 +30,20 @@ button.addEventListener("click", () => {
 function showPokemons() {
     document.querySelector(".loadingData").style.visibility = "visible";
 }
+
+const startPokemon = async () => {
+    for (var i = 1; i <=  151; i++) {
+
+        try {
+            await fetch()
+            .then(function (result) {
+
+            })
+            .then(function (data) {
+                console.log(data);
+            })
+        } catch (error) {
+            alert(`There is  an error: $(error)`)
+        }
+    } 
+};
