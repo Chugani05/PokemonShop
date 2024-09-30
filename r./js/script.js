@@ -49,4 +49,4 @@ const startPokemon = async () => {
             alert(`There is  an error: $(error)`)
         }
     } 
-};
+}; 
