@@ -1,3 +1,6 @@
+// Importamos la clase Pokemon desde el archivo Pokemon.js
+import Pokemon from './pokemon';
+
 // array to save pokemons
 var pokemons = [];
 
@@ -35,7 +38,7 @@ const startPokemon = async () => {
     for (var i = 1; i <=  151; i++) {
 
         try {
-            await fetch()
+            await fetch("https://pokeapi.co/api/v2/pokemon/" + i + "/")
             .then(function (result) {
 
             })
