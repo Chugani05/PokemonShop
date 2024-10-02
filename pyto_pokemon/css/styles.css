@@ -18,21 +18,16 @@ body {
     background: #3466AF;
 }
 
-.header {
-    /*font-family: DejaVu Sans Mono, monospace;
-    color: white;*/
+header {
     text-align: center;
-}
-
-.logo {
-    width: 600px; 
-    height: 200px;
 }
 
 .body {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 800;
+    height: 400;
 }
 
 .button {
@@ -47,10 +42,10 @@ body {
     font-size: 16px;
     font-family: DejaVu Sans Mono, monospace;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    margin: 20px;
 }
 
 /* Pokedex */
-
 #pokedex {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -66,13 +61,7 @@ body {
     text-align: center;
 }
 
-.card:hover img {
-    display:none;
-}
-.card .front {
-    display:none;
-}
-.card:hover .front {
+.card:hover {
     display: inline-block;
     animation: resizePokemon 1s;
 }
@@ -80,7 +69,7 @@ body {
 @keyframes resizePokemon {
     0% { transform: scale(1)}
 
-    100% { transform: scale(2.2)}
+    100% { transform: scale(1.5)}
 }
 
 .types {

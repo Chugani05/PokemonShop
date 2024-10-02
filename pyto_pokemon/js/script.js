@@ -32,7 +32,7 @@ button.addEventListener("click", () => {
 
 const startPokemon = async () => {
     document.querySelector(".cargandoDatos").style.visibility = "visible";
-    for (var i = 1; i <= 151; i++) {
+    for (var i = 1; i <= 156; i++) {
         try {
             await fetch("https://pokeapi.co/api/v2/pokemon/" + i + "/")
                 .then(function (result) {
@@ -64,7 +64,7 @@ const showPokedex = async () => {
 
     const pokedex = document.getElementById("pokedex");
 
-    document.querySelector(".cargandoDatos").style.visibility = "hidden";
+    document.querySelector(".cargandoDatos").style.display = 'none';
     showConsole();
     button.style.visibility = "hidden";
 
@@ -78,7 +78,6 @@ const showPokedex = async () => {
         }
         pokedex.innerHTML += `
             <div class="card">
-                <img src="${pokemons[i].pkm_back}">
                 <img src="${pokemons[i].pkm_front}">
                 <br>
                 ${pokemons[i].id}. ${pokemons[i].name}

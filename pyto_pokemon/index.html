@@ -10,31 +10,30 @@
 
 <body>
     <header id="main-header">
+        <img src="./assets/images/logo.png" alt="pokedex"> 
+
         <div>
-            <!-- <h1 id="header-title">Tienda Pokemon</h1> -->
-            <img src="./assets/images/logo.png" alt="pokedex">
+            <div>
+                <input type="text" id="filtro" class="input" placeholder="Buscar por tipo...">
+                <input type="text" id="filtro" class="input" placeholder="Buscar por generación...">
+                <input type="text" id="filtro" class="input" placeholder="Buscar por Poder Total...">
+            </div>
+            <div>
+                <input type="button" id="btn_lista_deseo" class="btnMenu" value="Añadir a lista de deseos" />
+                <input type="button" id="btn_lista_deseo" class="btnMenu" value="Ver lista de deseos" />
+                <input type="button" id="btn_lista_deseo" class="btnMenu" value="Comprar" />
+                <input type="button" id="btn_lista_deseo" class="btnMenu"  value="Ver compra" />
+            </div>
         </div>
     </header>
-    <div class=body>
+    <div class="body">
         <button id="button" class="button" >Let's go</button>
-    </div>
-    <div>
-        <input type="text" id="filtro" class="input" placeholder="Buscar por tipo...">
-        <input type="text" id="filtro" class="input" placeholder="Buscar por generación...">
-        <input type="text" id="filtro" class="input" placeholder="Buscar por Poder Total...">
-    </div>
-    <div>
-        <input type="button" id="btn_lista_deseo" class="btnMenu" value="Añadir a lista de deseos" />
-        <input type="button" id="btn_lista_deseo" class="btnMenu" value="Ver lista de deseos" />
-        <input type="button" id="btn_lista_deseo" class="btnMenu" value="Comprar" />
-        <input type="button" id="btn_lista_deseo" class="btnMenu"  value="Ver compra" />
     </div>
     
     <div id="pokedex">
-        <h2 class="cargandoDatos">Cargando datos....</h2>
+        <h2 class="cargandoDatos">Loding data....</h2>
     </div>
 
     <script type="module" src="js/script.js"></script>
 </body>
-
 </html>
