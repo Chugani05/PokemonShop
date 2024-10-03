@@ -1,0 +1,166 @@
+.input,
+.btnMenu,
+.listaPokemon,
+.cargandoDatos {
+  visibility: hidden;
+}
+
+body {
+  background: #3466af;
+}
+
+.header {
+  /*font-family: DejaVu Sans Mono, monospace;
+    color: white;*/
+  text-align: center;
+}
+
+.logo {
+  width: 600px;
+  height: 200px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.letsgo {
+  background-color: #ff0000;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: DejaVu Sans Mono, monospace;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.cargandoDatos {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+@keyframes puntosAnimacion {
+  0% {
+    content: "";
+  }
+  33% {
+    content: ".";
+  }
+  66% {
+    content: "..";
+  }
+  100% {
+    content: "...";
+  }
+}
+
+.puntos::after {
+  content: "";
+  animation: puntosAnimacion 1.5s infinite;
+}
+
+/* Pokedex */
+
+#pokedex {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 10px 10px;
+  width: 100%;
+}
+
+.card {
+  font-family: DejaVu Sans Mono, monospace;
+  border: 2px solid rgb(78, 78, 78);
+  border-radius: 5px;
+  background-image: linear-gradient(rgb(88, 88, 88), rgb(255, 255, 255));
+  text-align: center;
+}
+
+.card:hover img {
+  display: none;
+}
+.card .front {
+  display: none;
+}
+.card:hover .front {
+  display: inline-block;
+  animation: resizePokemon 1s infinite;
+}
+
+@keyframes resizePokemon {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.types {
+  border: 1px solid rgb(255, 217, 0);
+  font: bold;
+  background-image: linear-gradient(
+    rgb(248, 247, 169, 0.5),
+    rgb(255, 238, 0, 0.5)
+  );
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid rgb(0, 247, 255);
+  background-image: linear-gradient(
+    rgb(169, 239, 248, 0.7),
+    rgb(0, 247, 255, 0.5)
+  );
+  font-size: 15px;
+  font: bold;
+}
+
+.attack {
+  text-align: left;
+  color: red;
+}
+
+.price {
+  text-align: right;
+  color: green;
+}
+
+.filterButtons,
+.menuButtons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.menuButtons {
+  margin-top: 13px;
+  margin-bottom: 13px;
+}
+
+#height {
+  border: 1px solid rgb(255, 0, 0);
+  font: bold;
+  background-image: linear-gradient(rgb(248, 169, 169), rgb(255, 0, 0));
+}
+
+#weight {
+  border: 1px solid rgb(0, 255, 115);
+  font: bold;
+  background-image: linear-gradient(rgb(169, 248, 218), rgb(0, 255, 115));
+}

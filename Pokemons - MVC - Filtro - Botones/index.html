@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Pokedex</title>
+        <link rel="icon" href="assets/images/pokeball.png" type="image/png">
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <div class="header">
+            <img src="assets/images/logo.png" class="logo">
+        </div>
+        <div class="body">
+            <button id="button" class="letsgo">Let's go!</button>
+        </div>
+        <div class="filterButtons">
+            <input type="text" id="filtroTipo" class="input"
+                placeholder="Buscar por tipo...">
+            <input type="text" id="filtroPeso" class="input"
+                placeholder="Buscar por peso..">
+            <input type="text" id="filtroPoderTotal" class="input"
+                placeholder="Buscar por Poder Total...">
+        </div>
+        <div class="menuButtons">
+            <input type="button" id="btnAgnadeListaDeseo" class="btnMenu"
+                value="Añadir a lista de deseos" />
+            <input type="button" id="btnVerLista" class="btnMenu"
+                value="Ver lista de deseos" />
+            <input type="button" id="btnComprar" class="btnMenu"
+                value="Comprar" />
+            <input type="button" id="btnVerCompra" class="btnMenu"
+                value="Ver compra" />
+        </div>
+        <div id="pokedex">
+            <p class="cargandoDatos">Cargando datos...</p>
+        </div>
+        <script type="module" src="./src/script.js"></script>
+    </body>
+</html>
