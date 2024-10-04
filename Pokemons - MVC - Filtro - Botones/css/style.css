@@ -9,15 +9,8 @@ body {
   background: #3466af;
 }
 
-.header {
-  /*font-family: DejaVu Sans Mono, monospace;
-    color: white;*/
+header {
   text-align: center;
-}
-
-.logo {
-  width: 600px;
-  height: 200px;
 }
 
 .button {
@@ -43,7 +36,8 @@ body {
   display: inline-block;
   font-size: 16px;
   font-family: DejaVu Sans Mono, monospace;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  margin: 5px;
 }
 
 .cargandoDatos {
@@ -72,7 +66,6 @@ body {
 }
 
 /* Pokedex */
-
 #pokedex {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -88,36 +81,15 @@ body {
   text-align: center;
 }
 
-.card:hover img {
-  display: none;
-}
-.card .front {
-  display: none;
-}
-.card:hover .front {
+.card:hover {
   display: inline-block;
-  animation: resizePokemon 1s infinite;
+  animation: resizePokemon 1s;
 }
 
 @keyframes resizePokemon {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
+  0% { transform: scale(1)}
 
-.types {
-  border: 1px solid rgb(255, 217, 0);
-  font: bold;
-  background-image: linear-gradient(
-    rgb(248, 247, 169, 0.5),
-    rgb(255, 238, 0, 0.5)
-  );
+  100% { transform: scale(1.5)}
 }
 
 .cardTop {
@@ -163,4 +135,22 @@ body {
   border: 1px solid rgb(0, 255, 115);
   font: bold;
   background-image: linear-gradient(rgb(169, 248, 218), rgb(0, 255, 115));
+}
+
+.types {
+  border: 1px solid rgb(255, 217, 0);
+  font: bold;
+  background-image: linear-gradient(rgb(248, 247, 169), rgb(255, 238, 0));
+}
+
+.ability {
+  border: 1px solid rgb(255, 166, 0);
+  font: bold;
+  background-image: linear-gradient(rgb(248, 211, 169), rgb(255, 166, 0));
+}
+
+.move {
+  border: 1px solid rgb(255, 94, 0);
+  font: bold;
+  background-image: linear-gradient(rgb(248, 198, 169), rgb(255, 94, 0));
 }
