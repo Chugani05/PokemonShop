@@ -28,18 +28,27 @@ export class PokemonView {
       const pokemonCard = document.createElement("div");
       pokemonCard.classList.add("card");
       pokemonCard.id = `pokemon-${pokemon.id}`;
-      pokemonCard.innerHTML = `
-        <div class="cardTop">
-          <div class="attack">Attack ${pokemon.attack}</div>
-          <div class="price">${pokemon.price}€</div>
-        </div>   
-        <img src="${pokemon.pkm_back}">
-        <img class="front" src="${pokemon.pkm_front}"><br>
-        ${pokemon.id}. ${pokemon.name}<br>
-        Weight ${pokemon.weight}.<br>
-        <div class="types">
-          ${types}
+      pokemonCard.innerHTML += `
+        <div class="card">
+          ${pokemon.name}<br>   
+          <img class="front" src="${pokemon.front}">
+          <div class="type">
+            Type: ${types}
+          </div>
+          <div class="attack">
+              Attack: ${pokemon.attack}
+          </div>
+          <div class="price">
+              Price: ${pokemon.price}€
+          </div>
         </div>`;
+
+        // <div class="move">
+        //     first move: ${pokemons[i].pkm_first_move}<br>
+        //   </div>
+        //   <div class="ability">
+        //       ability: ${pokemons[i].pkm_ability}<br>
+        //   </div>
 
       /*  
       // Añadir EventListener de click

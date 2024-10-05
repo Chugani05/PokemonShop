@@ -17,7 +17,7 @@ export class PokemonModel {
   }
 
   async loadPokemons() {
-    for (let i = 1; i <= 151; i++) {
+    for (let i = 1; i <= 156; i++) {
       const pokemon = await this.fetchPokemon(i);
       pokemon.price = ((5 + pokemon.attack * (20 - 5)) / 100).toFixed(2);
       this.pokemons.push(pokemon);
