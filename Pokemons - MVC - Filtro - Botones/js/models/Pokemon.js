@@ -13,7 +13,7 @@ export class Pokemon {
     this.generation = getPokemonGeneration(this.id);
 
     function getPokemonGeneration(id) {
-      switch (id) {
+      switch (true) {
           case (id >= 1 && id <= 151):
               return 'Generation 1 (Kanto)';
           case (id >= 152 && id <= 251):

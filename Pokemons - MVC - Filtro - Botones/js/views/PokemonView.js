@@ -35,22 +35,23 @@ export class PokemonView {
           <div class="type">
             Type: ${types}
           </div>
-          <div class="ability">
-              Ability: ${pokemon.ability}
-          </div>
-          <div class="move">
-              First move: ${pokemon.first_move}
-          </div>
           <div class="generation">
-              Generation: ${pokemon.generation}
-          </div>
-          <div class="attack">
-              Attack: ${pokemon.attack}
+            Generation: ${pokemon.generation}
           </div>
           <div class="price">
-              Price: ${pokemon.price}€
+            Price: ${pokemon.price}€
           </div>
         </div>`;
+
+        // <div class="ability">
+        //   Ability: ${pokemon.ability}
+        // </div>
+        // <div class="move">
+        //   Moves: ${pokemon.first_move}
+        // </div>
+        // <div class="attack">
+        //   Attack: ${pokemon.attack}
+        // </div>
 
       /*  
       // Añadir EventListener de click
