@@ -24,7 +24,7 @@ export class PokemonView {
   displayPokemons(pokemons) {
     this.pokedex.innerHTML = "";
     pokemons.forEach((pokemon) => {
-      let types = pokemon.pkm_type.map((t) => t.type.name).join(" ");
+      let types = pokemon.pkm_type.map((t) => t.type.name).join(" & ");
       const pokemonCard = document.createElement("div");
       pokemonCard.classList.add("card");
       pokemonCard.id = `pokemon-${pokemon.id}`;
@@ -35,6 +35,12 @@ export class PokemonView {
           <div class="type">
             Type: ${types}
           </div>
+          <div class="ability">
+              Ability: ${pokemon.ability}
+          </div>
+          <div class="move">
+              first move: ${pokemon.first_move}
+          </div>
           <div class="attack">
               Attack: ${pokemon.attack}
           </div>
@@ -42,13 +48,6 @@ export class PokemonView {
               Price: ${pokemon.price}€
           </div>
         </div>`;
-
-        // <div class="move">
-        //     first move: ${pokemons[i].pkm_first_move}<br>
-        //   </div>
-        //   <div class="ability">
-        //       ability: ${pokemons[i].pkm_ability}<br>
-        //   </div>
 
       /*  
       // Añadir EventListener de click
