@@ -29,14 +29,14 @@ export class PokemonView {
       pokemonCard.classList.add("card");
       pokemonCard.id = `pokemon-${pokemon.id}`;
       pokemonCard.innerHTML += `
-        <div class="card-conteiner">
+        <div class="card-container">
           <div class="card">
             <!-- Front side -->
             <div class="card-front">
               <div class="name">
                 ${pokemon.name}
               </div>
-              <img class="front" src="${pokemon.front}" width=90>
+              <img class="front" src="${pokemon.front}" width=90px height=100px>
               <div class="type">
                 Type: ${types}
               </div>
@@ -49,14 +49,16 @@ export class PokemonView {
             </div>
             <!-- Back side -->
             <div class="card-back">
+              <div class="attack">
+                Health: ${pokemon.health}<br> 
+                Attack: ${pokemon.attack}<br> 
+                Defense: ${pokemon.defense}<br> 
+                Special attack: ${pokemon.s_attack}<br> 
+                Special defense: ${pokemon.s_defense}<br> 
+                Speed: ${pokemon.speed}
+              </div>
               <div class="ability">
                 Ability: ${pokemon.ability}
-              </div>
-              <div class="move">
-                Moves: ${pokemon.first_move}
-              </div>
-              <div class="attack">
-                Attack: ${pokemon.attack}
               </div>
             </div>
           </div>
