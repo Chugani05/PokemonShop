@@ -39,7 +39,10 @@ export class PokemonView {
               Ability: ${pokemon.ability}
           </div>
           <div class="move">
-              first move: ${pokemon.first_move}
+              First move: ${pokemon.first_move}
+          </div>
+          <div class="generation">
+              Generation: ${pokemon.generation}
           </div>
           <div class="attack">
               Attack: ${pokemon.attack}

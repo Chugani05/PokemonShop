@@ -82,6 +82,24 @@ header {
   background-image: linear-gradient(rgb(248, 211, 169), rgb(255, 166, 0));
 }
 
+.move {
+  border: 1px solid rgb(255, 94, 0);
+  font: bold;
+  background-image: linear-gradient(rgb(248, 198, 169), rgb(255, 94, 0));
+}
+
+.generation {
+  border: 1px solid rgb(255, 94, 0);
+  font: bold;
+  background-image: linear-gradient(rgb(248, 198, 169), rgb(255, 94, 0));
+}
+
+.ability {
+  border: 1px solid rgb(255, 94, 0);
+  font: bold;
+  background-image: linear-gradient(rgb(248, 198, 169), rgb(255, 94, 0));
+}
+
 .type {
   border: 1px solid rgb(255, 94, 0);
   font: bold;
