@@ -1,0 +1,155 @@
+/* Hide the input fields, menu buttons, and loading elements initially */
+.input,
+.btnMenu,
+.listaPokemon,
+.cargandoDatos {
+  visibility: hidden;
+}
+
+/* Set the background color of the page */
+body {
+  background: #3466af;
+}
+
+/* Center the content in the header */
+header {
+  text-align: center;
+}
+
+/* Center align the button */
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center align the main content */
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Style for the 'Let's go!' button */
+.letsgo {
+  background-color: #ff0000; /* Red background */
+  border-radius: 8px; /* Rounded corners */
+  border: none;
+  color: white; /* White text */
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: DejaVu Sans Mono, monospace; /* Monospace font */
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Shadow effect */
+  margin: 5px;
+}
+
+/* Style for the loading message */
+.cargandoDatos {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Pokedex grid layout, with 6 columns */
+#pokedex {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+/* Add margins to the menu buttons */
+.menuButtons {
+  margin-top: 13px;
+  margin-bottom: 10px;
+}
+
+/* Container for the Pokémon card, enabling 3D flipping effect */
+.card-container {
+  perspective: 1000px; /* Enables 3D flipping */
+}
+
+/* Style for the Pokémon card */
+.card {
+  font-family: DejaVu Sans Mono, monospace; /* Monospace font */
+  width: 250px;
+  height: 250px;
+  transform-style: preserve-3d; /* Enables 3D space for rotation */
+  transition: transform 1s ease-in-out; /* Smooth transition for flipping */
+}
+
+/* Flip the card on hover */
+.card-container:hover .card {
+  transform: rotateX(180deg); /* Rotates the element 180 degrees on the X-axis */
+  -webkit-transform: rotateX(180deg); /* Prefix for WebKit browsers */
+  transform-origin: center; /* Sets the origin point of the transformation to the center of the element */
+}
+
+/* Style for both the front and back of the card */
+.card-front, .card-back {
+  position: absolute;
+  width: 90%;
+  height: 80%;
+  backface-visibility: hidden; /* Hide the back face when not visible */
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  color: #000000;
+  top: 0; /* Keep the front and back sides aligned */
+  left: 0;
+}
+
+/* Front side of the card */
+.card-front {
+  background-image: linear-gradient(rgb(24, 24, 24), rgb(43, 42, 42));
+}
+
+/* Back side of the card */
+.card-back {
+  background-image: linear-gradient(rgb(24, 24, 24), rgb(43, 42, 42));
+  transform: rotateX(180deg); /* Initially hidden (flipped) */
+  -webkit-transform: rotateX(180deg);
+}
+
+/* Style for the Pokémon name */
+.name {
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+/* Style for the Pokémon type */
+.type {
+  border: 1px solid rgb(255, 17, 0);
+  font-weight: bold;
+  background-image: linear-gradient(rgb(252, 183, 178), rgb(255, 17, 0));
+}
+
+/* Style for the Pokémon generation */
+.generation {
+  border: 1px solid rgb(255, 94, 0);
+  font-weight: bold;
+  background-image: linear-gradient(rgb(248, 198, 169), rgb(255, 94, 0));
+}
+
+/* Style for the Pokémon price */
+.price {
+  border: 1px solid rgb(255, 217, 0);
+  font-weight: bold;
+  background-image: linear-gradient(rgb(248, 247, 169), rgb(255, 238, 0));
+}
+
+/* Style for the Pokémon attack stats */
+.attack {
+  border: 1px solid rgb(0, 255, 21);
+  font-weight: bold;
+  background-image: linear-gradient(rgb(169, 255, 169), rgb(0, 255, 21));
+}
+
+/* Style for the Pokémon ability */
+.ability {
+  border: 1px solid rgb(0, 204, 255);
+  font-weight: bold;
+  background-image: linear-gradient(rgb(169, 236, 248), rgb(0, 204, 255));
+}
