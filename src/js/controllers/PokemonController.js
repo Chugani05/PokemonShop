@@ -20,13 +20,12 @@ export class PokemonController {
   async init() {
     this.view.showLoading(); // Show loading spinner
     try {
-        await this.model.loadPokemons(); // Load Pokémon data
-        const randomPokemons = await this.model.fetchRandomPokemons(54); // Fetch random Pokémon
+        await this.model.fetchRandomPokemons(54); // Fetch random Pokémon
         this.view.hideLoading(); // Hide loading spinner
         this.view.showConsole(); // Show console view
 
         // Show the random Pokémon
-        this.pokemonsFiltered = randomPokemons; // Store random Pokémon in the filtered list
+        this.pokemonsFiltered = this.model.getAllPokemons(); // Store random Pokémon in the filtered list
         this.view.displayPokemons(this.pokemonsFiltered, (pokemonId) => {
             this.selectedPokemon = pokemonId; // Set the selected Pokémon ID
             console.log(`Selected Pokémon: ${this.selectedPokemon}`); // Log selected Pokémon
@@ -49,7 +48,6 @@ export class PokemonController {
     const filterGeneration = document.querySelector("#filtroGeneracion"); // Filter by generation
     filterGeneration.addEventListener("keyup", () => this.filteringPokemons()); // Filter on keyup
 
-    // Note: The following button event is not functioning correctly
     const btnAddToWishList = document.querySelector("#btnAgnadeListaDeseo"); // Add to wish list button
     if (btnAddToWishList) {
       btnAddToWishList.addEventListener("click", this.addToWishList.bind(this)); // Bind add to wish list event

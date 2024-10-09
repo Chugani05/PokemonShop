@@ -1,40 +1,55 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon Shop</title>
-    <link rel="stylesheet" type="text/css" href="./css/styles.css">
-    <link rel="shortcut icon" href="./assets/images/pokeball.png" type="image/x-icon">
+    <!-- Favicon for the page -->
+    <link rel="icon" href="./assets/images/pokeball.png" type="image/png">
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body>
-    <header id="main-header">
-        <img src="./assets/images/logo.png" alt="pokedex"> 
-
+    <!-- Header section with a logo and filter/menu buttons -->
+    <header>
+        <!-- Logo of the Pokémon shop -->
+        <img src="assets/images/logo.png" class="logo" alt="Pokemon Shop Logo">
         <div>
-            <div>
-                <input type="text" id="filtro" class="input" placeholder="Buscar por tipo...">
-                <input type="text" id="filtro" class="input" placeholder="Buscar por generación...">
-                <input type="text" id="filtro" class="input" placeholder="Buscar por Poder Total...">
+            <!-- Filter section with search inputs -->
+            <div class="filterButtons">
+                <!-- Filter by Pokémon type -->
+                <input type="text" id="filtroTipo" class="input" placeholder="Search by type...">
+                <!-- Filter by Pokémon name -->
+                <input type="text" id="filtroNombre" class="input" placeholder="Search by name...">
+                <!-- Filter by Pokémon generation -->
+                <input type="text" id="filtroGeneracion" class="input" placeholder="Search by generation...">
             </div>
-            <div>
-                <input type="button" id="btn_lista_deseo" class="btnMenu" value="Añadir a lista de deseos" />
-                <input type="button" id="btn_lista_deseo" class="btnMenu" value="Ver lista de deseos" />
-                <input type="button" id="btn_lista_deseo" class="btnMenu" value="Comprar" />
-                <input type="button" id="btn_lista_deseo" class="btnMenu"  value="Ver compra" />
+            <!-- Buttons for managing wish list and shopping cart -->
+            <div class="menuButtons">
+                <!-- Button to add a Pokémon to the wish list -->
+                <input type="button" id="btnAgnadeListaDeseo" class="btnMenu" value="Add to wish list" />
+                <!-- Button to view the wish list -->
+                <input type="button" id="btnMostrarListaDeseo" class="btnMenu" value="See wish list" />
+                <!-- Button to add a Pokémon to the shopping cart -->
+                <input type="button" id="btnAgnadeCarrito" class="btnMenu" value="Add to shopping cart" />
+                <!-- Button to view the shopping cart -->
+                <input type="button" id="btnVerCarrito" class="btnMenu" value="See shopping cart" />
             </div>
         </div>
     </header>
+
+    <!-- Main content section with a button to start the app -->
     <div class="body">
-        <button id="button" class="button" >Let's go</button>
-    </div>
-    
-    <div id="pokedex">
-        <h2 class="cargandoDatos">Loding data....</h2>
+        <button id="button" class="letsgo">Let's go!</button>
     </div>
 
-    <script type="module" src="js/script.js"></script>
+    <!-- Section to display Pokémon cards (initially hidden until data is loaded) -->
+    <div id="pokedex">
+        <!-- Loading message that appears while data is being fetched -->
+        <p class="cargandoDatos">Loading data...</p>
+    </div>
+    
+    <!-- Script to link the JavaScript file -->
+    <script type="module" src="./js/script.js"></script>
 </body>
 </html>

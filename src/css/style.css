@@ -80,8 +80,8 @@ header {
 
 /* Flip the card on hover */
 .card-container:hover .card {
-  transform: rotateY(180deg); /* Rotates the element 180 degrees on the Y-axis */
-  -webkit-transform: rotateY(180deg); /* Prefix for WebKit browsers */
+  transform: rotateX(180deg); /* Rotates the element 180 degrees on the Y-axis */
+  -webkit-transform: rotateX(180deg); /* Prefix for WebKit browsers */
   transform-origin: center; /* Sets the origin point of the transformation to the center of the element */
 }
 
@@ -106,8 +106,8 @@ header {
 /* Back side of the card */
 .card-back {
   background-image: linear-gradient(rgb(24, 24, 24), rgb(43, 42, 42));
-  transform: rotateY(180deg); /* Initially hidden (flipped) */
-  -webkit-transform: rotateY(180deg);
+  transform: rotateX(180deg); /* Initially hidden (flipped) */
+  -webkit-transform: rotateX(180deg);
 }
 
 /* Style for the Pokémon name */
