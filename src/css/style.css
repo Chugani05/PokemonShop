@@ -9,11 +9,13 @@
 /* Set the background color of the page */
 body {
   background: #3466af;
+  margin: 0;
 }
 
 /* Center the content in the header */
 header {
   text-align: center;
+  
 }
 
 /* Center align the button */
@@ -56,6 +58,7 @@ header {
 #pokedex {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
+  justify-items: center;
 }
 
 /* Add margins to the menu buttons */
@@ -156,6 +159,6 @@ header {
 .card-active {
   border-color: white; /* Change to your desired border color */
   box-shadow: 0 0 15px white, 0 0 20px white; /* Glow effect */
-  width: 85%;
-  height: 98%;
+  width: 265px;
+  height: 245px;
 }

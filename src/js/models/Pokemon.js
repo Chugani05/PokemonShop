@@ -2,7 +2,7 @@
 export class Pokemon {
     // Constructor that receives 'data' as a parameter, which contains the Pokémon data retrieved from the API
     constructor(data) {
-        this.name = data.name; // Pokémon's name
+        this.name = data.name[0].toUpperCase() + data.name.slice(1); // Pokémon's name
         this.id = data.id; // Pokémon's ID
         this.health = data.stats[0].base_stat; // Pokémon's health stat
         this.attack = data.stats[1].base_stat; // Pokémon's attack stat
