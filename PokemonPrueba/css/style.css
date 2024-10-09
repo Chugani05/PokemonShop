@@ -80,8 +80,8 @@ header {
 
 /* Flip the card on hover */
 .card-container:hover .card {
-  transform: rotateX(180deg); /* Rotates the element 180 degrees on the X-axis */
-  -webkit-transform: rotateX(180deg); /* Prefix for WebKit browsers */
+  transform: rotateY(180deg); /* Rotates the element 180 degrees on the Y-axis */
+  -webkit-transform: rotateY(180deg); /* Prefix for WebKit browsers */
   transform-origin: center; /* Sets the origin point of the transformation to the center of the element */
 }
 
@@ -96,8 +96,6 @@ header {
   padding: 20px;
   text-align: center;
   color: #000000;
-  top: 0; /* Keep the front and back sides aligned */
-  left: 0;
 }
 
 /* Front side of the card */
@@ -108,8 +106,8 @@ header {
 /* Back side of the card */
 .card-back {
   background-image: linear-gradient(rgb(24, 24, 24), rgb(43, 42, 42));
-  transform: rotateX(180deg); /* Initially hidden (flipped) */
-  -webkit-transform: rotateX(180deg);
+  transform: rotateY(180deg); /* Initially hidden (flipped) */
+  -webkit-transform: rotateY(180deg);
 }
 
 /* Style for the Pokémon name */
@@ -152,4 +150,12 @@ header {
   border: 1px solid rgb(0, 204, 255);
   font-weight: bold;
   background-image: linear-gradient(rgb(169, 236, 248), rgb(0, 204, 255));
+}
+
+/* Style to visually indicate that a specific card is active */
+.card-active {
+  border-color: white; /* Change to your desired border color */
+  box-shadow: 0 0 15px white, 0 0 20px white; /* Glow effect */
+  width: 85%;
+  height: 98%;
 }

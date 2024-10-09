@@ -63,9 +63,19 @@ export class PokemonView {
                 </div>`;
   
             // Add an event listener for when the card is clicked, passing the Pokémon's ID
-            pokemonCard.addEventListener("click", () => {
-                onPokemonClick(pokemon.id); // Trigger callback with the selected Pokémon's ID
-            });
+            // pokemonCard.addEventListener("click", () => {
+            //     onPokemonClick(pokemon.id); // Trigger callback with the selected Pokémon's ID
+            // });
+
+             // Add event listener for click
+        pokemonCard.addEventListener("click", () => {
+            // Remove active class from all cards
+            document.querySelectorAll('.card').forEach(card => card.classList.remove('card-active'));
+            // Add active class to the clicked card
+            pokemonCard.classList.add('card-active');
+            // Trigger the onPokemonClick callback
+            onPokemonClick(pokemon.id);
+        });
   
             // Append the card to the Pokedex element
             this.pokedex.appendChild(pokemonCard);
