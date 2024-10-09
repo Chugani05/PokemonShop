@@ -1,46 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Pokemon Shop</title>
-        <link rel="icon" href="./assets/images/pokeball.png" type="image/png">
-        <link rel="stylesheet" href="./css/style.css">
-    </head>
-    <body>
-        <header>
-            <img src="assets/images/logo.png" class="logo">
-
-            <div>
-                <div class="filterButtons">
-                    <input type="text" id="filtroTipo" class="input"
-                        placeholder="Search by type...">
-                    <input type="text" id="filtroPeso" class="input"
-                        placeholder="Search by name...">
-                    <input type="text" id="filtroPoderTotal" class="input"
-                        placeholder="Search by...">
-                </div>
-                <div class="menuButtons">
-                    <input type="button" id="btnAgnadeListaDeseo" class="btnMenu"
-                        value="Add to wish list" />
-                    <input type="button" id="btnVerLista" class="btnMenu"
-                        value="See wish list" />
-                    <input type="button" id="btnComprar" class="btnMenu"
-                        value="Add to shopping cart" />
-                    <input type="button" id="btnVerCompra" class="btnMenu"
-                        value="See shopping cart" />
-                </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Shop</title>
+    <link rel="icon" href="./assets/images/pokeball.png" type="image/png">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <img src="assets/images/logo.png" class="logo" alt="Pokemon Shop Logo">
+        <div>
+            <div class="filterButtons">
+                <input type="text" id="filtroTipo" class="input" placeholder="Search by type...">
+                <input type="text" id="filtroNombre" class="input" placeholder="Search by name...">
+                <input type="text" id="filtroGeneracion" class="input" placeholder="Search by generation...">
             </div>
-        </header>
-
-        <div class="body">
-            <button id="button" class="letsgo">Let's go!</button>
+            <div class="menuButtons">
+                <input type="button" id="btnAgnadeListaDeseo" class="btnMenu" value="Add to wish list" />
+                <input type="button" id="btnMostrarListaDeseo" class="btnMenu" value="See wish list" />
+                <input type="button" id="btnAgnadeCarrito" class="btnMenu" value="Add to shopping cart" />
+                <input type="button" id="btnVerCarrito" class="btnMenu" value="See shopping cart" />
+            </div>
         </div>
+    </header>
 
-        <div id="pokedex">
-            <p class="cargandoDatos">Cargando datos...</p>
-        </div>
-        
-        <script type="module" src="./js/script.js"></script>
-    </body>
+    <div class="body">
+        <button id="button" class="letsgo">Let's go!</button>
+    </div>
+
+    <div id="pokedex">
+        <p class="cargandoDatos">Loading data...</p>
+    </div>
+    
+    <script type="module" src="./js/script.js"></script>
+</body>
 </html>
