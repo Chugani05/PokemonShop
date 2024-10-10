@@ -10,37 +10,39 @@ export class Pokemon {
         this.s_attack = data.stats[3].base_stat; // Pokémon's special attack stat
         this.s_defense = data.stats[4].base_stat; // Pokémon's special defense stat
         this.speed = data.stats[5].base_stat; // Pokémon's speed stat
-        this.price = 0;
         this.front = data.sprites.other.dream_world.front_default; // Pokémon's front-facing sprite (Dream World version)
         this.ability = data.abilities[0].ability.name; // Pokémon's ability (the first ability in the array)
         this.pkm_type = data.types; // Pokémon's type (returns an array of types)
-        this.generation = getPokemonGeneration(this.id); // Generation of the Pokémon, determined by ID
+        // this.generation = getPokemonGeneration(this.id); // Generation of the Pokémon, determined by ID
+    }
 
-    // Function that returns a string with the Pokémon's generation based on its ID
-    function getPokemonGeneration(id) {
+    get price() {
+        return ((this.health + this.attack + this.defense + this.s_attack + this.s_defense + this.speed) * (60 - 5) / 100).toFixed(2);
+    }
+
+    get generation() {
         switch (true) {
-            case (id >= 1 && id <= 151):
+            case (this.id >= 1 && this.id <= 151):
                 return 'Generation 1 (Kanto)';
-            case (id >= 152 && id <= 251):
+            case (this.id >= 152 && this.id <= 251):
                 return 'Generation 2 (Johto)';
-            case (id >= 252 && id <= 386):
+            case (this.id >= 252 && this.id <= 386):
                 return 'Generation 3 (Hoenn)';
-            case (id >= 387 && id <= 493):
+            case (this.id >= 387 && this.id <= 493):
                 return 'Generation 4 (Sinnoh)';
-            case (id >= 494 && id <= 649):
+            case (this.id >= 494 && this.id <= 649):
                 return 'Generation 5 (Unova)';
-            case (id >= 650 && id <= 721):
+            case (this.id >= 650 && this.id <= 721):
                 return 'Generation 6 (Kalos)';
-            case (id >= 722 && id <= 809):
+            case (this.id >= 722 && this.id <= 809):
                 return 'Generation 7 (Alola)';
-            case (id >= 810 && id <= 898):
+            case (this.id >= 810 && this.id <= 898):
                 return 'Generation 8 (Galar)';
-            case (id >= 899 && id <= 1010):
+            case (this.id >= 899 && this.id <= 1010):
                 return 'Generation 9 (Paldea)';
             default:
                 return 'Unknown Generation'; // Fallback for Pokémon IDs outside the expected range
         }
-      }
     }
-  }
+}
   

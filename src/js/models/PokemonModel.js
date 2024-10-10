@@ -30,7 +30,6 @@ export class PokemonModel {
       while (randomPokemons.length < count) {
           const randomId = Math.floor(Math.random() * totalPokemons) + 1; // Generate a random ID between 1 and totalPokemons
           const pokemon = await this.fetchPokemon(randomId); // Fetch the Pokémon by its random ID
-          pokemon.price = ((pokemon.health + pokemon.attack + pokemon.defense + pokemon.s_attack + pokemon.s_defense + pokemon.price) * (60 - 5) / 100).toFixed(2);
           
           // Check if the Pokémon is not already in the array, and if not, add it
           if (!randomPokemons.includes(pokemon)) {
