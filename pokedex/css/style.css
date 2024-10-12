@@ -15,7 +15,21 @@ body {
 /* Center the content in the header */
 header {
   text-align: center;
-  
+}
+
+.logo {
+  margin-top: -70px;
+  margin-bottom: 20px;
+  width: 600px;
+  height: 225px;
+}
+
+.user {
+  margin-top: 25px;
+  margin-right: 25px;
+  margin-left: 1800px;
+  width: 95px;
+  height: 95px;
 }
 
 /* Center align the button */
