@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.wishlist-container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.wishlist-info {
+    margin-bottom: 30px;
+}
+
+.wishlist-info h2 {
+    color: #333;
+}
+
+.wishlist-info p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.pokemon-list {
+    margin-top: 20px;
+}
+
+.pokemon-list h3 {
+    color: #333;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+.no-pokemon {
+    text-align: center;
+    color: #999;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.window-buttons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}

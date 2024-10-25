@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon shop | User profile</title>
+    <!-- Favicon for the page -->
+    <link rel="icon" href="./assets/images/pokeball.png" type="image/png">
+    <link rel="stylesheet" href="./css/user.css">
+</head>
+<body>
+    <div class="profile-container">
+        <h1>User Profile</h1>
+        
+        <div class="profile-info">
+            <h2>Profile Information</h2>
+            <img src="./assets/images/user.png" alt="user profile picture">
+            <p><strong>Username:</strong> <span id="username"></span></p>
+            <p><strong>Balance:</strong> <span id="balance"></span></p>
+        </div>
+
+        <div class="pokemon-list">
+            <h3>Purchased Pokémon</h3>
+            <ul id="purchased-pokemon-list">
+                <!-- Purchased Pokémon will be dynamically added here -->
+            </ul>
+            <p class="no-pokemon" id="no-pokemon-message">You haven't purchased any Pokémon yet.</p>
+        </div>
+    </div>
+
+    <script type="module" src="./js/user.js"></script>
+</body>
+</html>
