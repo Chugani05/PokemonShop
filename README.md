@@ -1,1 +1,1 @@
-# pokemon_project
+# Pokemon Shop
