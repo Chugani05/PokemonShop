@@ -19,6 +19,7 @@ async function login() {
   for (const user of allUsers) {
     if (user["username"] === inputUsername && user["password"] === inputPassword) {
       window.open(`shop.html?id=${user["id"]}`);
+      clearFields();
       return;
     }
   }
@@ -55,6 +56,8 @@ async function register() {
     };
     await database.create(data);
     alert(`Nuevo usuario ${inputUsername} creado. Por favor, inicia sesión para acceder a la tienda.`);
+    clearFields();
+    location.reload();
   } else {
     alert("Las contraseñas no coinciden.");
   }
@@ -79,4 +82,12 @@ function validateRegister() {
   }
 
   return true;
+}
+
+function clearFields() {
+  document.getElementById("loginUsername").value = "";
+  document.getElementById("loginPassword").value = "";
+  document.getElementById("signupUsername").value = "";
+  document.getElementById("registerPassword").value = "";
+  document.getElementById("confirmPassword").value = "";
 }

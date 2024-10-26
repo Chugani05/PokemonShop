@@ -1,19 +1,16 @@
-// Export the Pokemon class as the default export
 export class Pokemon {
-    // Constructor that receives 'data' as a parameter, which contains the Pokémon data retrieved from the API
     constructor(data) {
-        this.name = data.name[0].toUpperCase() + data.name.slice(1); // Pokémon's name
-        this.id = data.id; // Pokémon's ID
-        this.health = data.stats[0].base_stat; // Pokémon's health stat
-        this.attack = data.stats[1].base_stat; // Pokémon's attack stat
-        this.defense = data.stats[2].base_stat; // Pokémon's defense stat
-        this.s_attack = data.stats[3].base_stat; // Pokémon's special attack stat
-        this.s_defense = data.stats[4].base_stat; // Pokémon's special defense stat
-        this.speed = data.stats[5].base_stat; // Pokémon's speed stat
-        this.front = data.sprites.other.dream_world.front_default; // Pokémon's front-facing sprite (Dream World version)
-        this.ability = data.abilities[0].ability.name; // Pokémon's ability (the first ability in the array)
-        this.pkm_type = data.types; // Pokémon's type (returns an array of types)
-        // this.generation = getPokemonGeneration(this.id); // Generation of the Pokémon, determined by ID
+        this.name = data.name[0].toUpperCase() + data.name.slice(1);
+        this.id = data.id;
+        this.health = data.stats[0].base_stat;
+        this.attack = data.stats[1].base_stat;
+        this.defense = data.stats[2].base_stat;
+        this.s_attack = data.stats[3].base_stat;
+        this.s_defense = data.stats[4].base_stat;
+        this.speed = data.stats[5].base_stat;
+        this.front = data.sprites.other.dream_world.front_default;
+        this.ability = data.abilities[0].ability.name;
+        this.pkm_type = data.types;
     }
 
     get price() {
@@ -21,11 +18,7 @@ export class Pokemon {
     }
 
     getTypes() {
-        let result = ''
-        for (const type of this.pkm_type) {
-            result += `${type.type.name} `
-        }
-        return result.trim()
+        return this.pkm_type.map(type => type.type.name).join(' & ');
     }
 
     get generation() {
@@ -49,7 +42,7 @@ export class Pokemon {
             case (this.id >= 899 && this.id <= 1010):
                 return 'Generation 9 (Paldea)';
             default:
-                return 'Unknown Generation'; // Fallback for Pokémon IDs outside the expected range
+                return 'Unknown Generation';
         }
     }
 }

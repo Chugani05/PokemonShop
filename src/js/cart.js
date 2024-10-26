@@ -17,8 +17,8 @@ for (const pkmId of cart) {
     const pokemon = await pokemonModel.fetchPokemon(pkmId)
     totalPrice += parseFloat(pokemon.price)
     pokemonList.innerHTML += `
-    <li class="list-group-item d-flex justify-content" id="${pkmId}">
-        <div class="d-flex gap-5">
+    <li class="list-group-item d-flex justify-content align-items-center" id="${pkmId}">
+        <div class="d-flex gap-5 align-items-center">
             <div>
                 <div>${pokemon.name}</div>
                 <img src="${pokemon.front}" width=90px height=100px>
@@ -56,14 +56,14 @@ async function removeFromDB(id) {
 
 $("#btn-buy").click( function() {
     if (balance >= totalPrice) {
-        x(userId)
+        purchaseItems(userId)
     }
     else {
-        alert("ffsdklwjiwsfdc")
+        alert("You don't have enough money in the account to purchase these items")
     }
 })
 
-async function x(userId) {
+async function purchaseItems(userId) {
     for (let item of cart) {
         inventory.push(item)
     }

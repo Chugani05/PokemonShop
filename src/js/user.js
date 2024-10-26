@@ -15,13 +15,15 @@ const pokemonList = document.getElementById("purchased-pokemon-list")
 for (const pkmId of inventory) {
     const pokemon = await pokemonModel.fetchPokemon(pkmId)
     pokemonList.innerHTML += `
-    <li>
-        <div>
-            <div class="text-center">${pokemon.name}</div>
-            <img src="${pokemon.front}" width=90px height=100px> <br>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div class="d-flex gap-5 align-items-center">
+            <div>
+                <div>${pokemon.name}</div>
+                <img src="${pokemon.front}" width=90px height=100px>
+            </div>
+            <div>Type:<br>${pokemon.getTypes()}</div>
+            <div>Generation:<br>${pokemon.generation}</div>
         </div>
-        <div>Type:<br>${pokemon.getTypes()}</div>
-        <div>Generation:<br>${pokemon.generation}</div>
     </li>
     `
 };

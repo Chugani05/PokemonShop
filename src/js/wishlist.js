@@ -14,17 +14,17 @@ const pokemonList = document.getElementById("wishlist-pokemon-list")
 for (const pkmId of wishlist) {
     const pokemon = await pokemonModel.fetchPokemon(pkmId)
     pokemonList.innerHTML += `
-    <li class="list-group-item d-flex justify-content" id="${pkmId}">
-        <div class="d-flex gap-5">
+    <li class="list-group-item d-flex justify-content-between align-items-center" id="${pkmId}">
+        <div class="d-flex gap-5 align-items-center">
             <div>
                 <div>${pokemon.name}</div>
-                <img src="${pokemon.front}" width=90px height=100px>
+                <img src="${pokemon.front}" width="90px" height="100px">
             </div>
             <div>Price:<br>${pokemon.price}€</div>
         </div>
-        <div>
-        <button type="button" class="btn btn-outline-primary btn-add">Add to cart</button>
-        <button type="button" class="btn btn-outline-secondary btn-remove">Remove from wishlist</button>
+        <div class="d-flex gap-2">
+            <button type="button" class="btn btn-outline-primary btn-add">Add to cart</button>
+            <button type="button" class="btn btn-outline-secondary btn-remove">Remove from wishlist</button>
         </div>
     </li>
     `

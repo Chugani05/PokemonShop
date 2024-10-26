@@ -2,40 +2,35 @@ import { Pokemon } from "./Pokemon.js";
 
 export class PokemonModel {
     constructor() {
-        const randomPokemons = []; // Array to store randomly fetched Pokémon
+        const randomPokemons = [];
     }
 
-    // Function to fetch a Pokémon by its ID from the PokeAPI
     async fetchPokemon(id) {
         try {
-            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`); // Fetching Pokémon data from the API
-            const data = await response.json(); // Convert the response to JSON
-            return new Pokemon(data); // Create a new Pokémon instance with the fetched data
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`);
+            const data = await response.json(); 
+            return new Pokemon(data);
         } catch (error) {
-            throw new Error(`Error fetching Pokémon with ID ${id}: ${error}`); // Error handling in case the fetch fails
+            throw new Error(`Error fetching Pokémon with ID ${id}: ${error}`);
         }
     }
 
-    // Function to return all fetched Pokémon
     getAllPokemons() {
         return this.randomPokemons;
     }
 
-    // Function to fetch a specified number of random Pokémon
     async fetchRandomPokemons(count) {
         const randomPokemons = []
-      const totalPokemons = 500; // Define the total range of Pokémon (for this example, it's 350)
+      const totalPokemons = 500;
 
-      // Keep fetching random Pokémon until the desired number (count) is reached
       while (randomPokemons.length < count) {
-          const randomId = Math.floor(Math.random() * totalPokemons) + 1; // Generate a random ID between 1 and totalPokemons
-          const pokemon = await this.fetchPokemon(randomId); // Fetch the Pokémon by its random ID
+          const randomId = Math.floor(Math.random() * totalPokemons) + 1;
+          const pokemon = await this.fetchPokemon(randomId);
           
-          // Check if the Pokémon is not already in the array, and if not, add it
           if (!randomPokemons.includes(pokemon)) {
               randomPokemons.push(pokemon);
             }
         }
-      this.randomPokemons = randomPokemons; // Return the array of random Pokémon
+      this.randomPokemons = randomPokemons;
     }
 }

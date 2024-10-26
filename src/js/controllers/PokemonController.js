@@ -2,7 +2,6 @@ import ConnectToDB from "../models/Database.js";
 import { PokemonModel } from "../models/PokemonModel.js";
 import { PokemonView } from "../views/PokemonView.js";
 
-// The main controller class for handling Pokémon logic
 export class PokemonController {
   constructor() {
     this.model = new PokemonModel();
@@ -17,64 +16,60 @@ export class PokemonController {
     this.shoppingCart = [];
     this.selectedPokemon = null;
 
-      // Bind the button event to initialize the controller
     this.init()
     }
 
-  // Initialize the application
   async init() {
-    this.view.showLoading(); // Show loading spinner
+    this.view.showLoading();
     try {
         this.userFile = await this.database.getFile(this.userId)
         console.log(this.userFile)
         this.wishList = this.userFile["wishlist"]
         this.shoppingCart = this.userFile["cart"]
-        await this.model.fetchRandomPokemons(54); // Fetch random Pokémon
-        this.view.hideLoading(); // Hide loading spinner
-        this.view.showConsole(); // Show console view
+        await this.model.fetchRandomPokemons(54);
+        this.view.hideLoading();
+        this.view.showConsole();
 
-        // Show the random Pokémon
-        this.pokemonsFiltered = this.model.getAllPokemons(); // Store random Pokémon in the filtered list
+        this.pokemonsFiltered = this.model.getAllPokemons();
         this.view.displayPokemons(this.pokemonsFiltered, (pokemonId) => {
-            this.selectedPokemon = pokemonId; // Set the selected Pokémon ID
-            console.log(`Selected Pokémon: ${this.selectedPokemon}`); // Log selected Pokémon
+            this.selectedPokemon = pokemonId; 
+            console.log(`Selected Pokémon: ${this.selectedPokemon}`);
         });
 
-        this.bindingEvents(); // Bind event listeners
+        this.bindingEvents();
     } catch (error) {
-        console.error(error); // Log any errors
+        console.error(error);
     }
 }
 
-  // Bind event listeners for filtering and managing Pokémon
   async bindingEvents() {
-    this.filterType = document.querySelector("#filtroTipo"); // Filter by type
-    this.filterType.addEventListener("keyup", () => this.filteringPokemons()); // Filter on keyup
+    this.filterType = document.querySelector("#filtroTipo");
+    this.filterType.addEventListener("keyup", () => this.filteringPokemons());
 
-    const filterName = document.querySelector("#filtroNombre"); // Filter by name
-    filterName.addEventListener("keyup", () => this.filteringPokemons()); // Filter on keyup
+    const filterName = document.querySelector("#filtroNombre");
+    filterName.addEventListener("keyup", () => this.filteringPokemons());
 
-    const filterGeneration = document.querySelector("#filtroGeneracion"); // Filter by generation
-    filterGeneration.addEventListener("keyup", () => this.filteringPokemons()); // Filter on keyup
+    const filterGeneration = document.querySelector("#filtroGeneracion");
+    filterGeneration.addEventListener("keyup", () => this.filteringPokemons());
 
-    const btnAddToWishList = document.querySelector("#btnAgnadeListaDeseo"); // Add to wish list button
+    const btnAddToWishList = document.querySelector("#btnAgnadeListaDeseo");
     if (btnAddToWishList) {
-      btnAddToWishList.addEventListener("click", this.addToWishList.bind(this)); // Bind add to wish list event
+      btnAddToWishList.addEventListener("click", this.addToWishList.bind(this));
     }
 
-    const btnShowWishList = document.querySelector("#btnMostrarListaDeseo"); // Show wish list button
+    const btnShowWishList = document.querySelector("#btnMostrarListaDeseo");
     if (btnShowWishList) {
-      btnShowWishList.addEventListener("click", this.showWishList.bind(this)); // Bind show wish list event
+      btnShowWishList.addEventListener("click", this.showWishList.bind(this));
     }
 
-    const btnAddToCart = document.querySelector("#btnAgnadeCarrito"); // Add to cart button
+    const btnAddToCart = document.querySelector("#btnAgnadeCarrito");
     if (btnAddToCart) {
-      btnAddToCart.addEventListener("click", this.addToCart.bind(this)); // Bind add to cart event
+      btnAddToCart.addEventListener("click", this.addToCart.bind(this));
     }
 
-    const btnViewCart = document.querySelector("#btnVerCarrito"); // View cart button
+    const btnViewCart = document.querySelector("#btnVerCarrito");
     if (btnViewCart) {
-      btnViewCart.addEventListener("click", this.showCart.bind(this)); // Bind show cart event
+      btnViewCart.addEventListener("click", this.showCart.bind(this));
     }
 
     const btnUserProfile = document.querySelector("#userProfile");
@@ -83,23 +78,22 @@ export class PokemonController {
     }
   }
 
-  // Filter Pokémon based on type, name, and generation
   async filteringPokemons() {
-    const typeFilterValue = this.filterType.value.toLowerCase(); // Get type filter value
-    const nameFilterValue = document.querySelector("#filtroNombre").value.toLowerCase(); // Get name filter value
-    const generationFilterValue = document.querySelector("#filtroGeneracion").value.toLowerCase(); // Get generation filter value
+    const typeFilterValue = this.filterType.value.toLowerCase();
+    const nameFilterValue = document.querySelector("#filtroNombre").value.toLowerCase();
+    const generationFilterValue = document.querySelector("#filtroGeneracion").value.toLowerCase();
 
     const filteredPokemons = this.model.getAllPokemons().filter((pokemon) => {
-        const matchesType = pokemon.pkm_type.some(type => type.type.name.toLowerCase().includes(typeFilterValue)); // Check type match
-        const matchesName = pokemon.name.toLowerCase().includes(nameFilterValue); // Check name match
-        const matchesGeneration = pokemon.generation.toLowerCase().includes(generationFilterValue); // Check generation match
+        const matchesType = pokemon.pkm_type.some(type => type.type.name.toLowerCase().includes(typeFilterValue));
+        const matchesName = pokemon.name.toLowerCase().includes(nameFilterValue);
+        const matchesGeneration = pokemon.generation.toLowerCase().includes(generationFilterValue);
 
-        return matchesType && matchesName && matchesGeneration; // Return true if all filters match
+        return matchesType && matchesName && matchesGeneration;
     });
 
     this.view.displayPokemons(filteredPokemons, (pokemonId) => {
-        this.selectedPokemon = pokemonId; // Set the selected Pokémon ID
-        console.log(`Selected Pokémon: ${this.selectedPokemon}`); // Log selected Pokémon
+        this.selectedPokemon = pokemonId;
+        console.log(`Selected Pokémon: ${this.selectedPokemon}`);
     });
   }
 

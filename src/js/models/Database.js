@@ -10,7 +10,6 @@ import {
   doc
 } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
 
-// Configuración de Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyDlOF7zoWOkc8ZmpaZa8iOdRJeOmEBzpX8",
     authDomain: "pokemon-shop-8b796.firebaseapp.com",
@@ -21,10 +20,8 @@ const firebaseConfig = {
     measurementId: "G-GJJZ1D1Z01"
 };
 
-// Inicializa Firebase
 const app = initializeApp(firebaseConfig);
 
-// Inicializa Firestore
 const db = getFirestore(app);
 
 class ConnectToDB {
@@ -32,7 +29,6 @@ class ConnectToDB {
     this.collectionRef = collection(db, "users");
   }
 
-  // Crear un nuevo documento
   async create(data) {
     try {
       const docRef = await addDoc(this.collectionRef, data);
@@ -43,7 +39,6 @@ class ConnectToDB {
     }
   }
 
-  // Leer todos los documentos
   async readAll() {
     try {
       const querySnapshot = await getDocs(this.collectionRef);
@@ -58,7 +53,6 @@ class ConnectToDB {
     }
   }
 
-  // Actualizar un documento por ID
   async update(id, data) {
     try {
       const docRef = doc(this.collectionRef, id);
@@ -69,7 +63,6 @@ class ConnectToDB {
     }
   }
 
-  // Eliminar un documento por ID
   async delete(id) {
     try {
       const docRef = doc(this.collectionRef, id);
