@@ -17,9 +17,9 @@ export class PokemonController {
     this.shoppingCart = [];
     this.selectedPokemon = null;
 
-    // Bind the button event to initialize the controller
-    document.querySelector("#button").addEventListener("click", () => this.init());
-  }
+      // Bind the button event to initialize the controller
+    this.init()
+    }
 
   // Initialize the application
   async init() {

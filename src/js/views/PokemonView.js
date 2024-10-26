@@ -7,7 +7,6 @@ export class PokemonView {
   
     // Show loading screen by hiding the button and displaying the loading message
     showLoading() {
-        document.querySelector("#button").style.visibility = "hidden"; // Hide the button
         this.loadingMessage.style.visibility = "visible"; // Show the loading message
         this.pokedex.style.visibility = "hidden"; // Hide the pokedex until loading is complete
     }

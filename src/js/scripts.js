@@ -53,7 +53,7 @@ async function register() {
       inventory: [],
       shoppingCart: []
     };
-    await database.addFile(data);
+    await database.create(data);
     alert(`Nuevo usuario ${inputUsername} creado. Por favor, inicia sesión para acceder a la tienda.`);
   } else {
     alert("Las contraseñas no coinciden.");
