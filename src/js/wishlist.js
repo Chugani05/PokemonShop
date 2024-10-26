@@ -70,3 +70,9 @@ async function addToCart(id) {
         });
         location.reload()
 }
+
+if (wishlist.length === 0) {
+    $("#empty").show();
+} else {
+    $("#empty").hide();
+}

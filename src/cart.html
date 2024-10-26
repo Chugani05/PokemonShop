@@ -6,11 +6,11 @@
     <title>Pokemon shop | Shopping cart</title>
     <!-- Favicon for the page -->
     <link rel="icon" href="./assets/images/pokeball.png" type="image/png">
-    <link rel="stylesheet" href="./css/cart.css">
+    <link rel="stylesheet" href="./css/base.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-    <div class="cart-container">
+    <div class="my-container">
         <h1>Your Shopping Cart</h1>
         <ul id="cart-items-list">
             <!-- Cart items will be dynamically added here -->
@@ -20,7 +20,7 @@
             <p><strong>Total price:</strong> <span id="total-price"></span></p>
         </div>
         <button class="btn btn-outline-primary" id="btn-buy">Buy Items</button>
-        <p class="empty-cart-message" id="empty-cart-message">Your cart is empty.</p>
+        <p class="empty" id="empty">Your cart is empty.</p>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

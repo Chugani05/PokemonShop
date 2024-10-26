@@ -14,7 +14,6 @@ const pokemonList = document.getElementById("purchased-pokemon-list")
 
 for (const pkmId of inventory) {
     const pokemon = await pokemonModel.fetchPokemon(pkmId)
-    console.log(pokemon)
     pokemonList.innerHTML += `
     <li>
         <div>
@@ -29,3 +28,9 @@ for (const pkmId of inventory) {
 
 $("#balance").text(`${balance}€`)
 $("#username").text(username)
+
+if (inventory.length === 0) {
+    $("#empty").show();
+} else {
+    $("#empty").hide();
+}

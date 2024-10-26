@@ -74,3 +74,9 @@ async function x(userId) {
     });
     location.reload()
 }
+
+if (cart.length === 0) {
+    $("#empty").show();
+} else {
+    $("#empty").hide();
+}
