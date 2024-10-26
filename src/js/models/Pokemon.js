@@ -20,6 +20,14 @@ export class Pokemon {
         return ((this.health + this.attack + this.defense + this.s_attack + this.s_defense + this.speed) * (60 - 5) / 100).toFixed(2);
     }
 
+    getTypes() {
+        let result = ''
+        for (const type of this.pkm_type) {
+            result += `${type.type.name} `
+        }
+        return result.trim()
+    }
+
     get generation() {
         switch (true) {
             case (this.id >= 1 && this.id <= 151):

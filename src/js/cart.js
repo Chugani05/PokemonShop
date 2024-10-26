@@ -1,14 +1,76 @@
-// importar la base de datos
 import ConnectToDB from "./models/Database.js";
-// importar modelo pokemon
 import { PokemonModel } from "./models/PokemonModel.js";
 
-// Conectar a la base de datos
 const database = new ConnectToDB()
-
-
+const pokemonModel = new PokemonModel()
 
 const userId = window.location.search.slice(4)
 const userFile = await database.getFile(userId)
 const cart = userFile["cart"]
 const balance = userFile["balance"]
+const inventory = userFile["inventory"]
+let totalPrice = 0
+
+const pokemonList = document.getElementById("cart-items-list")
+
+for (const pkmId of cart) {
+    const pokemon = await pokemonModel.fetchPokemon(pkmId)
+    totalPrice += parseFloat(pokemon.price)
+    pokemonList.innerHTML += `
+    <li class="list-group-item d-flex justify-content" id="${pkmId}">
+        <div class="d-flex gap-5">
+            <div>
+                <div>${pokemon.name}</div>
+                <img src="${pokemon.front}" width=90px height=100px>
+            </div>
+            <div>Price:<br>${pokemon.price}€</div>
+        </div>
+        <div>
+        <button type="button" class="btn btn-outline-secondary btn-remove">Remove from cart</button>
+        </div>
+    </li>
+    `
+};
+
+$("#balance").text(`${balance}€`)
+$("#total-price").text(`${totalPrice}€`)
+
+$(".btn-remove").click( function() {
+    const id = $(this).parents("li").attr("id")
+    removeFromDB(id)
+    
+})
+
+async function removeFromDB(id) {
+    let new_cart = []
+    for (let index = 0; index < cart.length; index++) {
+            if (id != cart[index]) {
+        new_cart.push(cart[index])
+            }        
+        }
+    await database.update(userId, {
+            cart: new_cart
+        });
+        location.reload()
+}
+
+$("#btn-buy").click( function() {
+    if (balance >= totalPrice) {
+        x(userId)
+    }
+    else {
+        alert("ffsdklwjiwsfdc")
+    }
+})
+
+async function x(userId) {
+    for (let item of cart) {
+        inventory.push(item)
+    }
+    await database.update(userId, {
+        cart: [],
+        balance: balance - totalPrice,
+        inventory: inventory
+    });
+    location.reload()
+}
