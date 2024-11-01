@@ -1,4 +1,7 @@
 # Pokemon Shop
+<div align=center>
+<img src="src/assets/images/logo.png" alt="logo">
+</div>
 
 ## Content
 - [Description](#description)
